@@ -1,0 +1,32 @@
+Console.WriteLine("*** Bienvenidos usuario1 y usuario2 al sistema de suma de edades ***");
+
+int sumarEdades(int edad1, int edad2)
+{
+    return edad1 + edad2;
+
+}
+
+int edad1, edad2;
+bool edadValida;
+
+//Valido la entrada de usuario1
+Console.Write("Usuario1, ingrese su edad:");
+edadValida = int.TryParse(Console.ReadLine(), out edad1);
+while (!edadValida || edad1 < 0)
+{
+    Console.WriteLine("La edad ingresada no es válida, por favor ingrese una edad numérica mayor a cero");
+    Console.Write("Usuario1, ingrese su edad: ");
+    edadValida = int.TryParse(Console.ReadLine(), out edad1);
+}
+Console.WriteLine("Usuario2, ingrese su edad:");
+edadValida = int.TryParse(Console.ReadLine(), out edad2);
+while (!edadValida || edad2 < 0)
+{
+    Console.WriteLine("La edad ingresada no es válida, por favor ingrese una edad numérica mayor a cero");
+    Console.Write("Usuario2, ingrese su edad: ");
+    edadValida = int.TryParse(Console.ReadLine(), out edad2);
+}
+// Ahora sumamos las edades de ambos usuarios
+Console.WriteLine("La suma de las edades es: " + sumarEdades(edad1, edad2));
+Console.WriteLine("*** Gracias por utilizar el sistema de conteo de edades ***");
+
